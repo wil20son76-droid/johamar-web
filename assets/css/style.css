@@ -1723,3 +1723,273 @@ input, textarea, select { font-family: inherit; }
   .areas-grid { grid-template-columns: 1fr; }
   .map-container { height: 300px; }
 }
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonials { background: var(--lighter); }
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,.05);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all var(--transition);
+  position: relative;
+}
+.testimonial-card::before {
+  content: '\201C';
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--accent);
+  opacity: .15;
+  position: absolute;
+  top: 12px;
+  right: 20px;
+}
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(13,33,102,.08);
+}
+
+.testimonial-stars { color: #f59e0b; font-size: .9rem; letter-spacing: 2px; }
+
+.testimonial-text {
+  font-size: .95rem;
+  color: var(--dark-3);
+  line-height: 1.7;
+  font-style: italic;
+  flex: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0,0,0,.06);
+}
+
+.testimonial-avatar {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--gradient);
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.testimonial-author strong {
+  display: block;
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+.testimonial-author span {
+  font-size: .8rem;
+  color: var(--mid);
+}
+
+.testimonials-summary {
+  text-align: center;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 24px 32px;
+  border: 1px solid rgba(0,0,0,.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.testimonials-summary .summary-stars {
+  color: #f59e0b;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+}
+.testimonials-summary p {
+  font-size: .95rem;
+  color: var(--mid);
+}
+.testimonials-summary strong { color: var(--dark); }
+
+@media (max-width: 1100px) {
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonials-summary { flex-direction: column; gap: 8px; }
+}
+
+/* ============================================
+   FAQ
+   ============================================ */
+.faq { background: var(--white); }
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+
+.faq-item {
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.faq-item.open {
+  border-color: rgba(13,33,102,.2);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  text-align: left;
+  background: var(--white);
+  font-size: .975rem;
+  font-weight: 600;
+  color: var(--dark);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+.faq-question span { flex: 1; }
+.faq-question i {
+  color: var(--primary);
+  font-size: .85rem;
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+.faq-item.open .faq-question {
+  background: rgba(13,33,102,.03);
+  color: var(--primary);
+}
+.faq-item.open .faq-question i { transform: rotate(180deg); }
+.faq-question:hover { background: var(--lighter); }
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .45s cubic-bezier(.4,0,.2,1), padding var(--transition);
+  padding: 0 24px;
+}
+.faq-item.open .faq-answer {
+  max-height: 400px;
+  padding: 0 24px 20px;
+}
+.faq-answer p {
+  font-size: .93rem;
+  color: var(--mid);
+  line-height: 1.75;
+  border-top: 1px solid rgba(0,0,0,.06);
+  padding-top: 16px;
+}
+.faq-answer a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* FAQ side card */
+.faq-cta-box {
+  background: var(--gradient);
+  border-radius: var(--radius-xl);
+  padding: 40px 32px;
+  text-align: center;
+  position: sticky;
+  top: 90px;
+  box-shadow: var(--shadow-blue);
+}
+
+.faq-cta-icon {
+  width: 68px; height: 68px;
+  background: rgba(255,255,255,.15);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--white);
+  margin: 0 auto 20px;
+}
+
+.faq-cta-box h3 {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.faq-cta-box p {
+  font-size: .9rem;
+  color: rgba(255,255,255,.8);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.faq-cta-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.faq-cta-btns .btn { justify-content: center; }
+.faq-cta-btns .btn-outline {
+  border-color: rgba(255,255,255,.5);
+  color: var(--white);
+}
+.faq-cta-btns .btn-outline:hover {
+  background: rgba(255,255,255,.15);
+  border-color: rgba(255,255,255,.7);
+}
+
+.faq-cta-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.15);
+}
+.faq-cta-contact a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: .875rem;
+  color: rgba(255,255,255,.85);
+  transition: color var(--transition);
+  font-weight: 500;
+}
+.faq-cta-contact a:hover { color: var(--white); }
+.faq-cta-contact i { font-size: .8rem; }
+
+@media (max-width: 1000px) {
+  .faq-layout { grid-template-columns: 1fr; gap: 40px; }
+  .faq-cta-box { position: static; }
+  .faq-cta-btns { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+}
