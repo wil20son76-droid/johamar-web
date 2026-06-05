@@ -5,14 +5,14 @@
 
 /* ---- CSS Variables ---- */
 :root {
-  --primary: #1a56db;
-  --primary-dark: #1341aa;
-  --primary-light: #3b82f6;
-  --accent: #06b6d4;
-  --accent-light: #67e8f9;
-  --dark: #0f172a;
-  --dark-2: #1e293b;
-  --dark-3: #334155;
+  --primary: #0d2166;
+  --primary-dark: #091754;
+  --primary-light: #1a3a9e;
+  --accent: #00c5e3;
+  --accent-light: #7ee8f7;
+  --dark: #0a1433;
+  --dark-2: #111e4a;
+  --dark-3: #1e3060;
   --mid: #64748b;
   --light: #f1f5f9;
   --lighter: #f8fafc;
@@ -29,7 +29,7 @@
   --shadow: 0 4px 16px rgba(0,0,0,.10);
   --shadow-lg: 0 10px 40px rgba(0,0,0,.14);
   --shadow-xl: 0 20px 60px rgba(0,0,0,.18);
-  --shadow-blue: 0 8px 32px rgba(26,86,219,.25);
+  --shadow-blue: 0 8px 32px rgba(13,33,102,.25);
 
   --radius: 12px;
   --radius-lg: 20px;
@@ -188,7 +188,7 @@ input, textarea, select { font-family: inherit; }
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 36px rgba(26,86,219,.35);
+  box-shadow: 0 12px 36px rgba(13,33,102,.35);
 }
 .btn-primary:active { transform: translateY(0); }
 
@@ -260,7 +260,7 @@ input, textarea, select { font-family: inherit; }
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--primary);
-  background: rgba(26,86,219,.08);
+  background: rgba(13,33,102,.08);
   padding: 5px 14px;
   border-radius: var(--radius-full);
   margin-bottom: 12px;
@@ -305,15 +305,15 @@ input, textarea, select { font-family: inherit; }
   align-items: center;
   padding: 120px 0 80px;
   overflow: hidden;
-  background: linear-gradient(160deg, #0f172a 0%, #1e3a8a 50%, #0e7490 100%);
+  background: linear-gradient(160deg, #0a1433 0%, #0d2166 55%, #007a8f 100%);
 }
 
 .hero-bg { position: absolute; inset: 0; }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 30% 50%, rgba(26,86,219,.3) 0%, transparent 70%),
-              radial-gradient(ellipse at 80% 20%, rgba(6,182,212,.2) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 30% 50%, rgba(13,33,102,.4) 0%, transparent 70%),
+              radial-gradient(ellipse at 80% 20%, rgba(0,197,227,.2) 0%, transparent 60%);
 }
 
 .hero-shapes { position: absolute; inset: 0; overflow: hidden; }
@@ -663,7 +663,7 @@ input, textarea, select { font-family: inherit; }
 }
 .service-card.featured::before { display: none; }
 .service-card.featured:hover {
-  box-shadow: 0 16px 48px rgba(26,86,219,.4);
+  box-shadow: 0 16px 48px rgba(13,33,102,.4);
 }
 .service-card.featured h3,
 .service-card.featured p { color: var(--white); }
@@ -737,7 +737,7 @@ input, textarea, select { font-family: inherit; }
   font-weight: 600;
   color: var(--primary);
   padding: 8px 16px;
-  border: 1.5px solid rgba(26,86,219,.25);
+  border: 1.5px solid rgba(13,33,102,.25);
   border-radius: var(--radius-full);
   transition: all var(--transition);
 }
@@ -983,7 +983,7 @@ input, textarea, select { font-family: inherit; }
 .benefits-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, #0f172a 0%, #1e3a8a 100%);
+  background: linear-gradient(160deg, #0a1433 0%, #0d2166 100%);
 }
 .benefits .section-tag { color: var(--accent-light); background: rgba(103,232,249,.12); }
 .benefits .section-title { color: var(--white); }
@@ -1280,7 +1280,7 @@ input, textarea, select { font-family: inherit; }
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(26,86,219,.12);
+  box-shadow: 0 0 0 3px rgba(13,33,102,.12);
   background: var(--white);
 }
 .form-group input.error,
@@ -1500,7 +1500,7 @@ input, textarea, select { font-family: inherit; }
   visibility: visible;
   transform: translateY(0);
 }
-.back-to-top:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(26,86,219,.4); }
+.back-to-top:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(13,33,102,.4); }
 
 /* ============================================
    AOS-like ANIMATIONS
