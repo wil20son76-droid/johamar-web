@@ -1993,3 +1993,93 @@ input, textarea, select { font-family: inherit; }
   .faq-cta-box { position: static; }
   .faq-cta-btns { flex-direction: row; flex-wrap: wrap; justify-content: center; }
 }
+
+/* ============================================
+   RUT-AVDRAG BANNER
+   ============================================ */
+.rut-banner {
+  background: linear-gradient(135deg, #0d2166 0%, #00c5e3 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+.rut-banner::before {
+  content: 'RUT RUT RUT RUT RUT RUT RUT RUT RUT RUT RUT RUT';
+  position: absolute;
+  top: 50%; left: 0; right: 0;
+  transform: translateY(-50%);
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(255,255,255,.04);
+  letter-spacing: .3em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.rut-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 20px 24px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.rut-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.18);
+  border: 1.5px solid rgba(255,255,255,.35);
+  border-radius: var(--radius-full);
+  padding: 8px 18px;
+  color: var(--white);
+  font-size: .95rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.rut-badge i { font-size: 1rem; color: #fde68a; }
+
+.rut-text {
+  color: rgba(255,255,255,.92);
+  font-size: 1rem;
+  text-align: center;
+}
+.rut-text strong {
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.rut-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  color: var(--primary);
+  font-size: .9rem;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all var(--transition);
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+}
+.rut-cta i { font-size: .8rem; transition: transform var(--transition); }
+.rut-cta:hover {
+  background: #fde68a;
+  color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+}
+.rut-cta:hover i { transform: translateX(4px); }
+
+@media (max-width: 640px) {
+  .rut-inner { gap: 14px; }
+  .rut-text { font-size: .9rem; }
+}
