@@ -225,3 +225,75 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     }
   });
 });
+
+/* ---- Testimonials Carousel ---- */
+(function () {
+  const track = document.getElementById('tcTrack');
+  const dotsEl = document.getElementById('tcDots');
+  if (!track || !dotsEl) return;
+
+  const slides = Array.from(track.querySelectorAll('.tc-slide'));
+  const prevBtn = document.querySelector('.tc-prev');
+  const nextBtn = document.querySelector('.tc-next');
+  let current = 0;
+  let perView = 3;
+
+  function getPerView() {
+    if (window.innerWidth < 640) return 1;
+    if (window.innerWidth < 1024) return 2;
+    return 3;
+  }
+
+  function totalGroups() {
+    return Math.max(1, slides.length - perView + 1);
+  }
+
+  function buildDots() {
+    dotsEl.innerHTML = '';
+    const n = totalGroups();
+    for (let i = 0; i < n; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'tc-dot' + (i === current ? ' active' : '');
+      btn.setAttribute('role', 'tab');
+      btn.setAttribute('aria-label', 'Recension ' + (i + 1));
+      btn.setAttribute('aria-selected', i === current ? 'true' : 'false');
+      btn.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(btn);
+    }
+  }
+
+  function goTo(idx) {
+    const n = totalGroups();
+    current = Math.max(0, Math.min(idx, n - 1));
+    const slideWidth = slides[0].offsetWidth + 24; // gap = 24px
+    track.style.transform = 'translateX(-' + (current * slideWidth) + 'px)';
+    dotsEl.querySelectorAll('.tc-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+      d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+    });
+    if (prevBtn) prevBtn.disabled = current === 0;
+    if (nextBtn) nextBtn.disabled = current >= n - 1;
+  }
+
+  function setup() {
+    perView = getPerView();
+    buildDots();
+    // Clamp current index if resized
+    current = Math.min(current, totalGroups() - 1);
+    goTo(current);
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) goTo(dx < 0 ? current + 1 : current - 1);
+  });
+
+  window.addEventListener('resize', setup);
+  setup();
+}());

@@ -1099,13 +1099,87 @@ input, textarea, select { font-family: inherit; }
    ============================================ */
 .testimonials { background: var(--lighter); }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+/* ---- Testimonials Carousel ---- */
+.tc-carousel {
+  position: relative;
+  padding: 0 0 64px;
   margin-bottom: 48px;
 }
 
+.tc-viewport {
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+}
+
+.tc-track {
+  display: flex;
+  gap: 24px;
+  transition: transform .45s cubic-bezier(.4,0,.2,1);
+  will-change: transform;
+  align-items: stretch;
+}
+
+.tc-slide {
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 0;
+}
+
+/* Arrow buttons */
+.tc-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(calc(-50% - 32px));
+  width: 48px; height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: var(--shadow);
+  color: var(--dark-2);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition);
+  z-index: 2;
+}
+.tc-arrow:hover {
+  background: #00B8C4;
+  color: var(--white);
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(0,184,196,.35);
+}
+.tc-arrow:focus-visible { outline: 2px solid #00B8C4; outline-offset: 2px; }
+.tc-prev { left: -24px; }
+.tc-next { right: -24px; }
+.tc-arrow:disabled { opacity: .35; pointer-events: none; }
+
+/* Dot indicators */
+.tc-dots {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.tc-dot {
+  width: 8px; height: 8px;
+  border-radius: var(--radius-full);
+  background: rgba(0,0,0,.18);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  padding: 0;
+}
+.tc-dot.active {
+  width: 24px;
+  background: #00B8C4;
+}
+.tc-dot:focus-visible { outline: 2px solid #00B8C4; outline-offset: 2px; }
+
+/* Card styles */
 .testimonial-card {
   background: var(--white);
   border-radius: var(--radius-lg);
@@ -1117,13 +1191,14 @@ input, textarea, select { font-family: inherit; }
   gap: 16px;
   transition: all var(--transition);
   position: relative;
+  height: 100%;
 }
 .testimonial-card::before {
   content: '\201C';
   font-family: Georgia, serif;
   font-size: 5rem;
   line-height: 1;
-  color: var(--accent);
+  color: #00B8C4;
   opacity: .15;
   position: absolute;
   top: 12px; right: 20px;
@@ -1131,7 +1206,7 @@ input, textarea, select { font-family: inherit; }
 .testimonial-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(12,110,122,.08);
+  border-color: rgba(0,184,196,.15);
 }
 
 .testimonial-stars { color: #f59e0b; font-size: .9rem; letter-spacing: 2px; }
@@ -1656,7 +1731,7 @@ input, textarea, select { font-family: inherit; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-large { grid-column: span 1; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+  .tc-slide { flex: 0 0 calc((100% - 24px) / 2); }
   .areas-layout { grid-template-columns: 1fr; gap: 40px; }
   .map-wrap { position: static; }
 }
@@ -1711,7 +1786,9 @@ input, textarea, select { font-family: inherit; }
   .hero-stats { gap: 16px; }
   .cta-actions { flex-direction: column; align-items: center; }
   .contact-form-wrap { padding: 24px; }
-  .testimonials-grid { grid-template-columns: 1fr; }
+  .tc-slide { flex: 0 0 100%; }
+  .tc-prev { left: 0; }
+  .tc-next { right: 0; }
   .testimonials-summary { flex-direction: column; gap: 8px; }
 }
 
