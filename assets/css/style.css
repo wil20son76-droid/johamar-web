@@ -320,24 +320,28 @@ input, textarea, select { font-family: inherit; }
 
 .hero-bg { position: absolute; inset: 0; }
 
-/* Hero background photo */
+/* Hero background photo — real Johamar branded photo */
 .hero-bg-photo {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 40%;
   z-index: 0;
-  opacity: .18;
+  opacity: .32;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: radial-gradient(ellipse at 30% 50%, rgba(26,44,64,.5) 0%, transparent 70%),
-              radial-gradient(ellipse at 80% 20%, rgba(29,122,113,.15) 0%, transparent 60%);
+  background: linear-gradient(
+    105deg,
+    rgba(15,27,45,.88) 0%,
+    rgba(26,44,64,.75) 45%,
+    rgba(26,44,64,.45) 100%
+  );
 }
 
 .hero-shapes { position: absolute; inset: 0; overflow: hidden; z-index: 1; }
@@ -438,20 +442,20 @@ input, textarea, select { font-family: inherit; }
   overflow: hidden;
 }
 
-/* Hero main photo (replaces CSS worker illustration) */
+/* Hero main photo — portrait worker with uniform visible */
 .hero-photo-wrap {
   border-radius: calc(var(--radius-xl) - 8px);
   overflow: hidden;
-  height: 300px;
+  height: 320px;
 }
 .hero-main-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%; /* show uniform/chest logo area */
   transition: transform var(--transition-slow);
 }
-.hero-card-main:hover .hero-main-photo { transform: scale(1.03); }
+.hero-card-main:hover .hero-main-photo { transform: scale(1.04); }
 
 .hero-card-info {
   display: flex;
@@ -652,16 +656,21 @@ input, textarea, select { font-family: inherit; }
 /* Service card photo — bleeds past padding to card edges */
 .service-photo {
   margin: -32px -32px 24px;
-  height: 200px;
+  height: 210px;
   overflow: hidden;
+  position: relative;
 }
+.service-photo picture { display: block; width: 100%; height: 100%; }
 .service-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .5s ease;
+  object-position: center 20%; /* favour the workers' upper body / logo area */
+  transition: transform .55s ease;
 }
-.service-card:hover .service-photo img { transform: scale(1.06); }
+/* portrait images (trapp) — show more from top */
+.service-photo img[src*="trapp"] { object-position: center 10%; }
+.service-card:hover .service-photo img { transform: scale(1.07); }
 
 /* Featured (Flyttstädning) */
 .service-card.featured {
@@ -931,34 +940,39 @@ input, textarea, select { font-family: inherit; }
 .gallery-large .gallery-visual { aspect-ratio: 16/9; }
 
 /* Real photos */
+.gallery-visual picture { display: block; width: 100%; height: 100%; }
 .gallery-visual img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   display: block;
-  transition: transform .6s ease;
+  transition: transform .65s ease;
 }
+/* portrait staircase images — show from top */
+.gallery-visual img[src*="trapp"] { object-position: center 5%; }
 .gallery-item:hover .gallery-visual img { transform: scale(1.07); }
 
-/* Hover overlay */
+/* Always-visible label at bottom, full overlay on hover */
 .gv-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(26,44,64,.92) 0%, rgba(26,44,64,.3) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(15,27,45,.85) 0%, rgba(26,44,64,.25) 50%, transparent 100%);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-end;
-  gap: 8px;
-  padding: 24px;
+  gap: 6px;
+  padding: 20px 24px;
   color: var(--white);
   font-weight: 700;
-  font-size: 1rem;
-  opacity: 0;
-  transition: opacity var(--transition);
+  font-size: .95rem;
+  transition: background var(--transition);
 }
-.gv-overlay i { font-size: 1.3rem; }
-.gallery-visual:hover .gv-overlay { opacity: 1; }
+.gv-overlay i { font-size: 1rem; opacity: .8; }
+.gallery-visual:hover .gv-overlay {
+  background: linear-gradient(to top, rgba(15,27,45,.92) 0%, rgba(26,44,64,.5) 60%, rgba(26,44,64,.15) 100%);
+}
 
 /* ============================================
    SERVICE AREAS
