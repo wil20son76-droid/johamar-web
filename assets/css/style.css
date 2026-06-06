@@ -1748,6 +1748,25 @@ body.modal-open { overflow: hidden; }
 .social-btn.whatsapp { background: var(--whatsapp); }
 
 /* Form */
+/* Offset for sticky header when scrolled-to via anchor */
+#contactForm { scroll-margin-top: 96px; }
+#contact { scroll-margin-top: 80px; }
+
+.contact-form-subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .875rem;
+  font-weight: 600;
+  color: #007A85;
+  background: rgba(0,184,196,.08);
+  border: 1px solid rgba(0,184,196,.2);
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+.contact-form-subtitle i { font-size: .8rem; }
+
 .contact-form-wrap {
   background: var(--white);
   border-radius: var(--radius-xl);
