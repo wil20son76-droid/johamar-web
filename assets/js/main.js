@@ -297,3 +297,52 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   window.addEventListener('resize', setup);
   setup();
 }());
+
+/* ---- Service Modals ---- */
+(function () {
+  let activeModal = null;
+
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    closeModal(); // close any open modal first
+    activeModal = modal;
+    modal.classList.add('open');
+    document.body.classList.add('modal-open');
+    // Focus the close button for accessibility
+    const closeBtn = modal.querySelector('.svc-modal-close');
+    if (closeBtn) setTimeout(() => closeBtn.focus(), 50);
+  }
+
+  function closeModal() {
+    if (!activeModal) return;
+    activeModal.classList.remove('open');
+    document.body.classList.remove('modal-open');
+    activeModal = null;
+  }
+
+  // Open via "Läs mer" buttons
+  document.querySelectorAll('.btn-las-mer').forEach(btn => {
+    btn.addEventListener('click', () => openModal(btn.dataset.modal));
+  });
+
+  // Close via close button
+  document.querySelectorAll('.svc-modal-close').forEach(btn => {
+    btn.addEventListener('click', closeModal);
+  });
+
+  // Close via overlay click
+  document.querySelectorAll('.svc-modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', closeModal);
+  });
+
+  // Close via ESC
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Close CTA links (href=#contact inside modal also close modal)
+  document.querySelectorAll('.svc-modal-cta').forEach(a => {
+    a.addEventListener('click', closeModal);
+  });
+}());
