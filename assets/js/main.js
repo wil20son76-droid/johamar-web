@@ -305,11 +305,13 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   function openModal(id) {
     const modal = document.getElementById(id);
     if (!modal) return;
-    closeModal(); // close any open modal first
+    if (activeModal) closeModal();
     activeModal = modal;
+    // Reset scroll position each open
+    const box = modal.querySelector('.svc-modal-box');
+    if (box) box.scrollTop = 0;
     modal.classList.add('open');
     document.body.classList.add('modal-open');
-    // Focus the close button for accessibility
     const closeBtn = modal.querySelector('.svc-modal-close');
     if (closeBtn) setTimeout(() => closeBtn.focus(), 50);
   }
@@ -321,27 +323,42 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     activeModal = null;
   }
 
-  // Open via "Läs mer" buttons
+  // Open
   document.querySelectorAll('.btn-las-mer').forEach(btn => {
-    btn.addEventListener('click', () => openModal(btn.dataset.modal));
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      openModal(this.dataset.modal);
+    });
   });
 
-  // Close via close button
+  // Close via × button
   document.querySelectorAll('.svc-modal-close').forEach(btn => {
-    btn.addEventListener('click', closeModal);
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      closeModal();
+    });
   });
 
-  // Close via overlay click
-  document.querySelectorAll('.svc-modal-overlay').forEach(overlay => {
-    overlay.addEventListener('click', closeModal);
+  // Close via overlay — but NOT when clicking inside the box
+  document.querySelectorAll('.svc-modal').forEach(modal => {
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal || e.target.classList.contains('svc-modal-overlay')) {
+        closeModal();
+      }
+    });
   });
 
-  // Close via ESC
+  // Prevent clicks inside box from bubbling to the modal backdrop
+  document.querySelectorAll('.svc-modal-box').forEach(box => {
+    box.addEventListener('click', e => e.stopPropagation());
+  });
+
+  // ESC key
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeModal();
   });
 
-  // Close CTA links (href=#contact inside modal also close modal)
+  // CTA "Begär offert" also closes
   document.querySelectorAll('.svc-modal-cta').forEach(a => {
     a.addEventListener('click', closeModal);
   });
