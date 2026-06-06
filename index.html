@@ -4,32 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO Meta Tags -->
-  <title>Johamar AB – Städservice i Sverige | Hemstädning, Kontorsstädning, Flyttstädning</title>
-  <meta name="description" content="Johamar AB erbjuder professionell städservice i Sverige. Vi utför hemstädning, kontorsstädning, trappstädning, flyttstädning, byggstädning och fönsterputs. Kontakta oss idag!" />
-  <meta name="keywords" content="städfirma, städservice, hemstädning, kontorsstädning, flyttstädning, byggstädning, trappstädning, fönsterputs, Johamar AB, städning Sverige, professionell städning" />
+  <!-- Primary SEO -->
+  <title>Städfirma Stockholm – Johamar AB | Hemstädning, Kontorsstädning, Flyttstädning</title>
+  <meta name="description" content="Johamar AB är din pålitliga städfirma i Stockholm. Vi erbjuder hemstädning, kontorsstädning, flyttstädning, trappstädning, byggstädning och fönsterputs i hela Stockholmsregionen. RUT-avdrag. Begär offert idag!" />
+  <meta name="keywords" content="städfirma Stockholm, hemstädning Stockholm, kontorsstädning Stockholm, flyttstädning Stockholm, trappstädning Stockholm, byggstädning Stockholm, fönsterputs Stockholm, städservice Stockholm, professionell städning Stockholm, Johamar AB" />
   <meta name="author" content="Johamar AB" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="geo.region" content="SE-AB" />
+  <meta name="geo.placename" content="Stockholm" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://wil20son76-droid.github.io/johamar-web/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Johamar AB – Professionell Städservice" />
-  <meta property="og:description" content="Vi levererar högkvalitativ städservice för hem och kontor i hela Sverige. Pålitlig, noggrann och professionell städning." />
-  <meta property="og:image" content="assets/images/logo-transparente.png" />
-  <!-- TODO: Ändra og:url till din faktiska domän -->
-  <meta property="og:url" content="https://www.johamarab.se" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:site_name" content="Johamar AB" />
+  <meta property="og:title" content="Städfirma Stockholm – Johamar AB | Professionell Städservice" />
+  <meta property="og:description" content="Johamar AB – din pålitliga städfirma i Stockholm. Hemstädning, kontorsstädning, flyttstädning & mer. RUT-avdrag. Begär gratis offert!" />
+  <meta property="og:image" content="https://wil20son76-droid.github.io/johamar-web/assets/images/hero-main.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://wil20son76-droid.github.io/johamar-web/" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Johamar AB – Professionell Städservice" />
-  <meta name="twitter:description" content="Hemstädning, kontorsstädning, flyttstädning och mer. Kontakta Johamar AB idag!" />
+  <meta name="twitter:title" content="Städfirma Stockholm – Johamar AB" />
+  <meta name="twitter:description" content="Professionell städservice i Stockholm. Hemstädning, kontorsstädning, flyttstädning & mer. RUT-avdrag 50%." />
+  <meta name="twitter:image" content="https://wil20son76-droid.github.io/johamar-web/assets/images/hero-main.png" />
 
-  <!-- Canonical -->
-  <!-- TODO: Ändra till din faktiska domän -->
-  <link rel="canonical" href="https://www.johamarab.se" />
+  <!-- Preload critical resources -->
+  <link rel="preload" as="image" href="assets/images/hero-main.webp" />
+  <link rel="preload" as="style" href="assets/css/style.css" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/logo-transparente.png" />
+  <link rel="apple-touch-icon" href="assets/images/logo-transparente.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,38 +52,96 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- Schema.org Structured Data -->
+  <!-- Schema.org: LocalBusiness + CleaningService -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Johamar AB",
-    "description": "Professionell städservice för hem och kontor i Sverige",
-    "image": "assets/images/logo-transparente.png",
-    "@id": "https://www.johamarab.se",
-    "url": "https://www.johamarab.se",
-    "telephone": "+46723213232",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Mullbärsstigen 7",
-      "postalCode": "196 34",
-      "addressLocality": "Kungsängen",
-      "addressCountry": "SE"
-    },
-    "geo": {
-      "@type": "GeoCoordinates"
-    },
-    "openingHoursSpecification": [
+    "@graph": [
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "07:00",
-        "closes": "18:00"
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "https://wil20son76-droid.github.io/johamar-web/#business",
+        "name": "Johamar AB",
+        "legalName": "Johamar AB",
+        "description": "Professionell städfirma i Stockholm. Vi erbjuder hemstädning, kontorsstädning, flyttstädning, trappstädning, byggstädning och fönsterputs i Stockholm och hela Stockholmsregionen.",
+        "image": "https://wil20son76-droid.github.io/johamar-web/assets/images/logo-transparente.png",
+        "logo": "https://wil20son76-droid.github.io/johamar-web/assets/images/logo-transparente.png",
+        "url": "https://wil20son76-droid.github.io/johamar-web/",
+        "telephone": "+46723213232",
+        "email": "info@johamar.se",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Mullbärsstigen 7",
+          "postalCode": "196 34",
+          "addressLocality": "Kungsängen",
+          "addressRegion": "Stockholm",
+          "addressCountry": "SE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 59.4976,
+          "longitude": 17.7526
+        },
+        "areaServed": [
+          {"@type": "City", "name": "Stockholm"},
+          {"@type": "City", "name": "Kungsängen"},
+          {"@type": "City", "name": "Järfälla"},
+          {"@type": "City", "name": "Sollentuna"},
+          {"@type": "City", "name": "Solna"},
+          {"@type": "City", "name": "Sundbyberg"},
+          {"@type": "City", "name": "Huddinge"},
+          {"@type": "City", "name": "Nacka"},
+          {"@type": "City", "name": "Täby"},
+          {"@type": "City", "name": "Bromma"}
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Städtjänster Stockholm",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hemstädning Stockholm"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kontorsstädning Stockholm"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Flyttstädning Stockholm"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Trappstädning Stockholm"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Byggstädning Stockholm"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fönsterputs Stockholm"}}
+          ]
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "07:00",
+            "closes": "18:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.instagram.com/johamar_stadservice/",
+          "https://www.facebook.com/profile.php?id=61590418451118"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://wil20son76-droid.github.io/johamar-web/#website",
+        "url": "https://wil20son76-droid.github.io/johamar-web/",
+        "name": "Johamar AB – Städfirma Stockholm",
+        "description": "Professionell städservice i Stockholm och Stockholmsregionen",
+        "publisher": {"@id": "https://wil20son76-droid.github.io/johamar-web/#business"},
+        "inLanguage": "sv-SE"
       }
-    ],
-    "sameAs": [
-      "https://www.instagram.com/johamar_stadservice/",
-      "https://www.facebook.com/profile.php?id=61590418451118"
+    ]
+  }
+  </script>
+  <!-- Schema.org: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Hur bokar jag städning hos Johamar AB?","acceptedAnswer":{"@type":"Answer","text":"Kontakta oss via WhatsApp på +46 72 321 32 32, ring direkt eller fyll i kontaktformuläret. Vi svarar vanligtvis inom några timmar."}},
+      {"@type":"Question","name":"Vilka områden täcker ni?","acceptedAnswer":{"@type":"Answer","text":"Vi utför städning i Stockholm och hela Stockholmsregionen, inklusive Kungsängen, Järfälla, Sollentuna, Solna, Sundbyberg, Huddinge, Nacka med flera."}},
+      {"@type":"Question","name":"Erbjuder ni RUT-avdrag?","acceptedAnswer":{"@type":"Answer","text":"Ja! Johamar AB är registrerade för RUT-avdrag. Du kan få upp till 50% rabatt på arbetskostnaden för hemstädning, fönsterputs och trappstädning."}},
+      {"@type":"Question","name":"Vad kostar en städning?","acceptedAnswer":{"@type":"Answer","text":"Priset beror på typ av städning, bostadens storlek och frekvens. Vi erbjuder alltid ett kostnadsfritt prisförslag inom 24 timmar. Vi har konkurrenskraftiga priser och erbjuder RUT-avdrag."}},
+      {"@type":"Question","name":"Tar ni med era egna städprodukter?","acceptedAnswer":{"@type":"Answer","text":"Ja, vi tar med all utrustning och professionella, miljövänliga städprodukter. Du behöver inte förbereda någonting."}},
+      {"@type":"Question","name":"Hur fungerar en flyttstädning?","acceptedAnswer":{"@type":"Answer","text":"Vi utför professionell flyttstädning enligt branschstandard som säkerställer att du får tillbaka din deposition. Vi kan utfärda städintyg på begäran."}}
     ]
   }
   </script>
@@ -149,12 +217,12 @@
           <span>Professionell städservice sedan dag ett</span>
         </div>
         <h1 class="hero-title">
-          Vi gör ditt hem<br />
-          <span class="gradient-text">skinande rent</span>
+          Städfirma i <span class="gradient-text">Stockholm</span><br />
+          du kan lita på
         </h1>
         <p class="hero-subtitle">
-          Johamar AB levererar förstklassig städservice för hem, kontor och lokaler i hela Sverige.
-          Pålitlig, noggrann och alltid i tid.
+          Johamar AB levererar professionell städservice i Stockholm och hela Stockholmsregionen.
+          Hemstädning, kontorsstädning, flyttstädning och mer – pålitlig, noggrann och alltid i tid.
         </p>
         <div class="hero-btns">
           <!-- TODO: Byt ut WhatsApp-numret mot ditt riktiga nummer -->
@@ -272,7 +340,7 @@
           </div>
           <h3>Hemstädning</h3>
           <p class="service-subtitle-text">Rent hem utan stress</p>
-          <p class="service-intro">Vi hjälper dig att hålla ditt hem rent och trivsamt med professionell hemstädning anpassad efter dina behov.</p>
+          <p class="service-intro">Professionell hemstädning i Stockholm anpassad efter dina behov. Våra erfarna städare skapar en ren och hälsosam miljö.</p>
           <button class="btn-las-mer" data-modal="modal-hemstadning" aria-label="Läs mer om Hemstädning">
             Läs mer <i class="fas fa-arrow-right"></i>
           </button>
@@ -294,7 +362,7 @@
           </div>
           <h3>Kontorsstädning</h3>
           <p class="service-subtitle-text">En ren arbetsplats för bättre produktivitet</p>
-          <p class="service-intro">Ett rent kontor bidrar till en trivsam arbetsmiljö och ger ett professionellt intryck för både medarbetare och besökare.</p>
+          <p class="service-intro">Professionell kontorsstädning i Stockholm – vi håller din arbetsplats fräsch, trivsam och representativ för medarbetare och besökare.</p>
           <button class="btn-las-mer" data-modal="modal-kontor" aria-label="Läs mer om Kontorsstädning">
             Läs mer <i class="fas fa-arrow-right"></i>
           </button>
@@ -316,7 +384,7 @@
           </div>
           <h3>Trappstädning</h3>
           <p class="service-subtitle-text">Välskötta entréer och gemensamma utrymmen</p>
-          <p class="service-intro">Regelbunden trappstädning bidrar till en ren, säker och välkomnande fastighet med hög standard.</p>
+          <p class="service-intro">Regelbunden trappstädning i Stockholm för rena, säkra och välkomnande trapphus och gemensamma utrymmen.</p>
           <button class="btn-las-mer" data-modal="modal-trapp" aria-label="Läs mer om Trappstädning">
             Läs mer <i class="fas fa-arrow-right"></i>
           </button>
@@ -339,7 +407,7 @@
           </div>
           <h3>Flyttstädning</h3>
           <p class="service-subtitle-text">Noggrann flyttstädning för en smidig flytt</p>
-          <p class="service-intro">Låt oss ta hand om städningen när du flyttar. Vi utför professionell flyttstädning enligt branschstandard.</p>
+          <p class="service-intro">Professionell flyttstädning i Stockholm enligt branschstandard – vi ser till att du får tillbaka din deposition.</p>
           <button class="btn-las-mer" data-modal="modal-flytt" aria-label="Läs mer om Flyttstädning">
             Läs mer <i class="fas fa-arrow-right"></i>
           </button>
@@ -361,7 +429,7 @@
           </div>
           <h3>Byggstädning</h3>
           <p class="service-subtitle-text">Professionell städning efter bygg- och renoveringsarbeten</p>
-          <p class="service-intro">Efter ett byggprojekt krävs en grundlig rengöring. Vi avlägsnar byggdamm och rester med stor noggrannhet.</p>
+          <p class="service-intro">Professionell byggstädning i Stockholm efter renovering eller nybygge – vi avlägsnar byggdamm och skräp med stor noggrannhet.</p>
           <button class="btn-las-mer" data-modal="modal-bygg" aria-label="Läs mer om Byggstädning">
             Läs mer <i class="fas fa-arrow-right"></i>
           </button>
@@ -383,13 +451,27 @@
           </div>
           <h3>Fönsterputs</h3>
           <p class="service-subtitle-text">Skinande rena fönster med professionellt resultat</p>
-          <p class="service-intro">Rena fönster ger bättre ljusinsläpp och ett fräschare intryck. Vi erbjuder professionell fönsterputs för alla behov.</p>
+          <p class="service-intro">Professionell fönsterputs i Stockholm för privatpersoner och företag – skinande rena fönster, insida och utsida.</p>
           <button class="btn-las-mer" data-modal="modal-fonster" aria-label="Läs mer om Fönsterputs">
             Läs mer <i class="fas fa-arrow-right"></i>
           </button>
         </div>
 
       </div>
+
+      <!-- SEO: Internal links to service landing pages -->
+      <div class="service-lp-links" data-aos="fade-up">
+        <p class="lp-links-label">Läs mer om varje tjänst i Stockholm:</p>
+        <div class="lp-links-row">
+          <a href="hemstadning-stockholm.html" class="lp-link-pill">Hemstädning Stockholm</a>
+          <a href="kontorsstadning-stockholm.html" class="lp-link-pill">Kontorsstädning Stockholm</a>
+          <a href="trappstadning-stockholm.html" class="lp-link-pill">Trappstädning Stockholm</a>
+          <a href="flyttstadning-stockholm.html" class="lp-link-pill">Flyttstädning Stockholm</a>
+          <a href="byggstadning-stockholm.html" class="lp-link-pill">Byggstädning Stockholm</a>
+          <a href="fonsterputs-stockholm.html" class="lp-link-pill">Fönsterputs Stockholm</a>
+        </div>
+      </div>
+
     </div>
   </section>
 

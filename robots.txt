@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wil20son76-droid.github.io/johamar-web/sitemap.xml

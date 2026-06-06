@@ -2057,3 +2057,45 @@ body.modal-open { overflow: hidden; }
   .social-links { gap: 10px; }
   .footer-bottom-inner { flex-direction: column; text-align: center; }
 }
+
+/* ============================================
+   SERVICE LP LINKS (SEO internal links)
+   ============================================ */
+.service-lp-links {
+  text-align: center;
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(0,0,0,.06);
+}
+.lp-links-label {
+  font-size: .85rem;
+  color: var(--mid);
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.lp-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.lp-link-pill {
+  display: inline-block;
+  background: #F3F6F7;
+  color: #374151;
+  font-size: .85rem;
+  font-weight: 500;
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1px solid #E5E7EB;
+  text-decoration: none;
+  transition: all .2s;
+}
+.lp-link-pill:hover {
+  background: #00B8C4;
+  color: #fff;
+  border-color: #00B8C4;
+  transform: translateY(-2px);
+}
