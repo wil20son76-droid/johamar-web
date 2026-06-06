@@ -668,8 +668,9 @@ input, textarea, select { font-family: inherit; }
   object-position: center 20%; /* favour the workers' upper body / logo area */
   transition: transform .55s ease;
 }
-/* portrait images (trapp) — show more from top */
-.service-photo img[src*="trapp"] { object-position: center 10%; }
+/* portrait images (trapp, hemstadning1) — anchor to upper subject */
+.service-photo img[src*="trapp"]       { object-position: center 10%; }
+.service-photo img[src*="hemstadning"] { object-position: center 15%; }
 .service-card:hover .service-photo img { transform: scale(1.07); }
 
 /* Featured (Flyttstädning) */
