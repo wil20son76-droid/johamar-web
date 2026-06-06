@@ -869,7 +869,14 @@ input, textarea, select { font-family: inherit; }
 .benefits .section-tag { color: #007A85; background: rgba(0,184,196,.1); }
 .benefits .section-title { color: #1F2937; }
 .benefits .section-subtitle { color: #4B5563; }
-.benefits .section-header { position: relative; z-index: 1; }
+
+/* Benefits header: never animated — always fully visible above bg layer */
+.benefits-header {
+  position: relative;
+  z-index: 2;
+  opacity: 1 !important;
+  transform: none !important;
+}
 
 .benefits-grid {
   position: relative;
