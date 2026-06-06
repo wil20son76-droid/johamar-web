@@ -2118,3 +2118,25 @@ body.modal-open { overflow: hidden; }
   border-color: #00B8C4;
   transform: translateY(-2px);
 }
+
+/* ============================================
+   BRAND NAME EMPHASIS
+   ============================================ */
+/* Bold in body text — inherits font, just weight */
+p strong, li strong, span strong, td strong {
+  font-weight: 700;
+  color: inherit;
+}
+
+/* In headings: slightly stronger visual with brand color accent */
+h1 strong, h2 strong, h3 strong {
+  font-weight: 800;
+  color: #00B8C4;
+}
+
+/* In footer, testimonial quotes and other dark-bg contexts: keep readable */
+.footer strong,
+.testimonial-text strong {
+  color: inherit;
+  font-weight: 700;
+}
