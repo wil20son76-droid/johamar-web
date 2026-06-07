@@ -4,16 +4,16 @@
    ========================================================= */
 
 :root {
-  --color-bg: #f7f5f2;
+  --color-bg: #f6f4f1;
   --color-white: #ffffff;
-  --color-charcoal: #1b1d21;
-  --color-charcoal-soft: #2a2d33;
+  --color-charcoal: #0a2a52;
+  --color-charcoal-soft: #123a6b;
   --color-gray: #5b5f66;
   --color-gray-light: #8b8f96;
   --color-border: #e4e1da;
-  --color-accent: #c9962e;
-  --color-accent-dark: #a87a1f;
-  --color-accent-soft: #f3e6cc;
+  --color-accent: #c24a00;
+  --color-accent-dark: #9c3c00;
+  --color-accent-soft: #f6ddcc;
 
   --font-heading: 'Poppins', 'Segoe UI', sans-serif;
   --font-body: 'Inter', 'Segoe UI', sans-serif;
@@ -157,18 +157,10 @@ h3 { font-size: 1.2rem; }
   gap: 12px;
 }
 .logo-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: 46px;
   height: 46px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--color-charcoal), var(--color-charcoal-soft));
-  color: var(--color-accent);
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.1rem;
-  letter-spacing: 0.03em;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 .logo-text { display: flex; flex-direction: column; line-height: 1.15; }
 .logo-text strong {
@@ -273,9 +265,9 @@ h3 { font-size: 1.2rem; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 20% 25%, rgba(201, 150, 46, 0.22), transparent 55%),
-    radial-gradient(ellipse at 85% 75%, rgba(201, 150, 46, 0.12), transparent 50%),
-    linear-gradient(160deg, #1b1d21 0%, #15171a 55%, #232527 100%);
+    radial-gradient(ellipse at 20% 25%, rgba(194, 74, 0, 0.22), transparent 55%),
+    radial-gradient(ellipse at 85% 75%, rgba(194, 74, 0, 0.12), transparent 50%),
+    linear-gradient(160deg, #0a2a52 0%, #081f3d 55%, #16407a 100%);
 }
 .hero-bg::after {
   content: "";
@@ -302,8 +294,8 @@ h3 { font-size: 1.2rem; }
   text-transform: uppercase;
   font-size: 0.82rem;
   color: var(--color-accent);
-  background: rgba(201, 150, 46, 0.12);
-  border: 1px solid rgba(201, 150, 46, 0.35);
+  background: rgba(194, 74, 0, 0.12);
+  border: 1px solid rgba(194, 74, 0, 0.35);
   border-radius: 999px;
   padding: 8px 18px;
   margin-bottom: 22px;
@@ -399,7 +391,7 @@ section { padding: 110px 0; }
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-md);
-  border-color: rgba(201,150,46,0.4);
+  border-color: rgba(194,74,0,0.4);
 }
 .service-icon {
   width: 58px;
@@ -438,7 +430,7 @@ section { padding: 110px 0; }
   aspect-ratio: 4 / 5;
   border-radius: var(--radius-lg);
   background:
-    linear-gradient(150deg, rgba(201,150,46,0.18), transparent 60%),
+    linear-gradient(150deg, rgba(194,74,0,0.18), transparent 60%),
     linear-gradient(135deg, var(--color-charcoal), var(--color-charcoal-soft));
   display: flex;
   align-items: flex-end;
@@ -448,7 +440,7 @@ section { padding: 110px 0; }
   content: "";
   position: absolute;
   inset: 18px;
-  border: 1px solid rgba(201,150,46,0.35);
+  border: 1px solid rgba(194,74,0,0.35);
   border-radius: calc(var(--radius-lg) - 12px);
 }
 .about-badge {
@@ -477,7 +469,7 @@ section { padding: 110px 0; }
    BENEFITS
    ========================================================= */
 .benefits {
-  background: linear-gradient(160deg, #1b1d21 0%, #202226 100%);
+  background: linear-gradient(160deg, #0a2a52 0%, #123a6b 100%);
   color: var(--color-white);
 }
 .benefits-grid {
@@ -496,12 +488,12 @@ section { padding: 110px 0; }
 .benefit-card:hover {
   transform: translateY(-6px);
   background: rgba(255,255,255,0.07);
-  border-color: rgba(201,150,46,0.4);
+  border-color: rgba(194,74,0,0.4);
 }
 .benefit-icon {
   width: 52px; height: 52px;
   border-radius: 12px;
-  background: rgba(201,150,46,0.14);
+  background: rgba(194,74,0,0.14);
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 18px;
 }
@@ -636,7 +628,7 @@ section { padding: 110px 0; }
    TESTIMONIALS
    ========================================================= */
 .testimonials {
-  background: linear-gradient(160deg, #1b1d21 0%, #202226 100%);
+  background: linear-gradient(160deg, #0a2a52 0%, #123a6b 100%);
   color: var(--color-white);
 }
 .testimonials-grid {
@@ -658,7 +650,7 @@ section { padding: 110px 0; }
 .testimonial-card:hover {
   transform: translateY(-6px);
   background: rgba(255,255,255,0.07);
-  border-color: rgba(201,150,46,0.4);
+  border-color: rgba(194,74,0,0.4);
 }
 .stars { color: var(--color-accent); letter-spacing: 2px; font-size: 0.95rem; }
 .testimonial-card blockquote {
@@ -707,7 +699,7 @@ section { padding: 110px 0; }
   overflow: hidden;
   transition: border-color var(--transition), box-shadow var(--transition);
 }
-.faq-item:hover { border-color: rgba(201,150,46,0.35); }
+.faq-item:hover { border-color: rgba(194,74,0,0.35); }
 .faq-question {
   width: 100%;
   display: flex;
@@ -795,7 +787,7 @@ section { padding: 110px 0; }
    CONTACT
    ========================================================= */
 .contact {
-  background: linear-gradient(160deg, #1b1d21, #202226);
+  background: linear-gradient(160deg, #0a2a52, #123a6b);
   color: var(--color-white);
 }
 .contact-inner {
@@ -810,7 +802,7 @@ section { padding: 110px 0; }
   flex-shrink: 0;
   width: 46px; height: 46px;
   border-radius: 12px;
-  background: rgba(201,150,46,0.14);
+  background: rgba(194,74,0,0.14);
   display: flex; align-items: center; justify-content: center;
 }
 .contact-icon svg { width: 22px; height: 22px; fill: none; stroke: var(--color-accent); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
@@ -851,7 +843,7 @@ section { padding: 110px 0; }
 .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 4px rgba(201,150,46,0.16);
+  box-shadow: 0 0 0 4px rgba(194,74,0,0.16);
 }
 .form-submit { width: 100%; margin-top: 6px; }
 .form-note { margin-top: 14px; font-size: 0.9rem; min-height: 1.2em; color: var(--color-accent-dark); font-weight: 600; }
@@ -964,7 +956,7 @@ section { padding: 110px 0; }
     right: 0;
     height: 100vh;
     width: min(340px, 86vw);
-    background: #15171a;
+    background: #081f3d;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
