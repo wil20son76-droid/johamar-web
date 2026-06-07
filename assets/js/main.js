@@ -15,14 +15,23 @@ window.addEventListener('load', () => {
 
 /* ---- Header scroll behavior ---- */
 const header = document.getElementById('header');
+
+/* Keep --header-h in sync so the mobile nav always sits just below the header */
+const setHeaderHeightVar = () => {
+  document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+};
+
 const handleHeaderScroll = () => {
   if (window.scrollY > 50) {
     header.classList.add('scrolled');
   } else {
     header.classList.remove('scrolled');
   }
+  setHeaderHeightVar();
 };
 window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+window.addEventListener('resize', setHeaderHeightVar);
+setHeaderHeightVar();
 
 /* ---- Mobile nav toggle ---- */
 const hamburger = document.getElementById('hamburger');
