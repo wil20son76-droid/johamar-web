@@ -236,6 +236,37 @@
   <!-- ===== OM OSS ===== -->
   <section class="about" id="om-oss">
     <div class="container about-inner">
+      <!--
+        ============================================================
+        BILDBYTE — OM OSS / TEAMFOTO (assets/images/team/)
+        ============================================================
+        .about-frame visar just nu en CSS-gradientkomposition med
+        en informationsbadge ovanpå. Lägg ett foto på teamet eller
+        grundaren i: johamar-bygg/assets/images/team/
+
+        Byt ut kompositionen genom att lägga till en <img> FÖRE
+        .about-badge inuti .about-frame, t.ex:
+
+          <div class="about-frame">
+            <img src="assets/images/team/johamar-team-kungsangen.jpg"
+                 alt="Johamar AB:s hantverkare på en byggarbetsplats i Kungsängen"
+                 width="640" height="800" loading="lazy" />
+            <div class="about-badge">
+              <strong>15+</strong>
+              <span>års samlad erfarenhet i byggbranschen</span>
+            </div>
+          </div>
+
+        Tips för responsiv/optimerad visning:
+        - Stående format runt 4:5 (t.ex. 640×800 px) passar .about-frame bäst.
+        - Exportera i .webp för snabbare laddning, .jpg som fallback.
+        - Ta bort aria-hidden="true" från .about-media om bilden tillför
+          information (t.ex. visar faktiska medarbetare) som inte redan
+          beskrivs i texten bredvid.
+        - Lägg till "img { width:100%; height:100%; object-fit:cover; }"
+          under .about-frame i style.css så fotot fyller ramen helt.
+        ============================================================
+      -->
       <div class="about-media reveal" aria-hidden="true">
         <div class="about-frame">
           <div class="about-badge">
@@ -313,23 +344,58 @@
         Varje projekt är unikt – men gemensamt för dem alla är vår strävan efter precision,
         hållbarhet och nöjda kunder. Här är ett axplock av vad vi arbetar med dagligen.
       </p>
+      <!--
+        ============================================================
+        BILDBYTE — PROJEKTGALLERI (assets/images/projects/)
+        ============================================================
+        Varje .project-card visar just nu en CSS/SVG-komposition
+        (klassen "proj-1" … "proj-6" styr bakgrundsfärgen i style.css).
+        Lägg dina egna projektfoton i: johamar-bygg/assets/images/projects/
+
+        Byt ut visningen genom att ta bort bakgrundsklassen (t.ex. "proj-1")
+        och lägga till en <img> FÖRE <figcaption>, t.ex:
+
+          <figure class="project-card reveal">
+            <img src="assets/images/projects/koksrenovering-stockholm-01.jpg"
+                 alt="Modernt renoverat kök med vitt snickeri och bänkskiva i trä, Stockholm"
+                 width="800" height="600" loading="lazy" />
+            <figcaption><span>Köksrenovering</span>Modernt kök, Stockholm</figcaption>
+          </figure>
+
+        Tips för responsiv/optimerad visning:
+        - Exportera bilder i .webp (med .jpg som fallback) och i ungefär
+          800×600 px för bästa balans mellan skärpa och laddningstid.
+        - Behåll width/height så att layouten inte hoppar (CLS).
+        - Skriv alltid en beskrivande svensk alt-text som nämner
+          tjänst + plats, för bättre SEO och tillgänglighet.
+        - .project-card har redan "object-fit: cover" via bakgrundsbilden;
+          lägg till "img { width:100%; height:100%; object-fit:cover; }"
+          under .project-card i style.css om du byter till <img>-taggar.
+        ============================================================
+      -->
       <div class="projects-grid">
         <figure class="project-card reveal proj-1">
+          <!-- Ersätt med: assets/images/projects/koksrenovering-stockholm-01.jpg -->
           <figcaption><span>Köksrenovering</span>Modernt kök, Stockholm</figcaption>
         </figure>
         <figure class="project-card reveal proj-2">
+          <!-- Ersätt med: assets/images/projects/badrumsrenovering-kungsangen-01.jpg -->
           <figcaption><span>Badrumsrenovering</span>Helrenoverat badrum, Kungsängen</figcaption>
         </figure>
         <figure class="project-card reveal proj-3">
+          <!-- Ersätt med: assets/images/projects/altan-tradack-upplands-bro-01.jpg -->
           <figcaption><span>Altan &amp; trädäck</span>Nybyggd uteplats, Upplands-Bro</figcaption>
         </figure>
         <figure class="project-card reveal proj-4">
+          <!-- Ersätt med: assets/images/projects/fasadarbete-bro-01.jpg -->
           <figcaption><span>Fasadarbeten</span>Fasadrenovering, Bro</figcaption>
         </figure>
         <figure class="project-card reveal proj-5">
+          <!-- Ersätt med: assets/images/projects/golvlaggning-stockholm-01.jpg -->
           <figcaption><span>Golvläggning</span>Parkettgolv, Stockholm city</figcaption>
         </figure>
         <figure class="project-card reveal proj-6">
+          <!-- Ersätt med: assets/images/projects/komplett-renovering-kungsangen-01.jpg -->
           <figcaption><span>Komplett renovering</span>Totalrenoverad lägenhet, Kungsängen</figcaption>
         </figure>
       </div>
@@ -346,6 +412,38 @@
         lyft fastigheter från slitna till moderna och funktionella – med kvalitet som håller.
       </p>
 
+      <!--
+        ============================================================
+        BILDBYTE — FÖRE & EFTER (assets/images/before-after/)
+        ============================================================
+        Varje .ba-pane visar just nu en CSS-gradientkomposition.
+        Lägg dina egna före/efter-foton i: johamar-bygg/assets/images/before-after/
+
+        Byt ut en panel genom att ta bort bakgrundsklassen (t.ex. "ba-2")
+        och lägga till en <img> inuti, t.ex:
+
+          <div class="ba-pane">
+            <img src="assets/images/before-after/kok-kungsangen-fore.jpg"
+                 alt="Köket i Kungsängen före renovering, slitna skåpluckor och gammal bänkskiva"
+                 width="500" height="375" loading="lazy" />
+            <span>Före</span>
+          </div>
+          <div class="ba-pane">
+            <img src="assets/images/before-after/kok-kungsangen-efter.jpg"
+                 alt="Samma kök i Kungsängen efter renovering, ljusa skåp och ny bänkskiva i sten"
+                 width="500" height="375" loading="lazy" />
+            <span>Efter</span>
+          </div>
+
+        Tips för responsiv/optimerad visning:
+        - Fota "före" och "efter" från exakt samma vinkel för bästa effekt.
+        - Exportera i .webp, ca 500×375 px (4:3), för snabb laddning.
+        - Behåll width/height för att undvika layoutskift (CLS).
+        - Lägg till "img { width:100%; height:100%; object-fit:cover;
+          position:absolute; inset:0; }" under .ba-pane i style.css
+          så att fotona fyller panelen precis som gradienterna gör nu.
+        ============================================================
+      -->
       <div class="ba-grid">
         <div class="ba-card reveal">
           <div class="ba-compare">
