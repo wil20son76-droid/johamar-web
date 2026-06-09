@@ -152,7 +152,7 @@ input, textarea, select { font-family: inherit; }
 }
 
 .logo-link { display: flex; align-items: center; flex-shrink: 0; }
-.logo { height: 56px; width: auto; transition: transform var(--transition); }
+.logo { height: 67px; width: auto; transition: transform var(--transition); }
 .logo:hover { transform: scale(1.04); }
 
 .nav-list {
@@ -2035,7 +2035,7 @@ body.modal-open { overflow: hidden; }
     gap: 0;
     justify-content: space-between;
   }
-  .logo { height: 40px; }
+  .logo { height: 48px; }
 
   /* Hide desktop CTA in header — shown inside the mobile menu instead */
   .header-actions .nav-cta { display: none; }
