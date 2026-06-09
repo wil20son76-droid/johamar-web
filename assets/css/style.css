@@ -2052,9 +2052,9 @@ body.modal-open { overflow: hidden; }
     position: relative;
     z-index: 10001;
   }
-  .hamburger span { background: var(--dark); }
-  .header.scrolled .hamburger span { background: var(--dark); }
-  .hamburger.open span { background: var(--dark); }
+  .hamburger span,
+  .header.scrolled .hamburger span,
+  .hamburger.open span { background: #1F2937; }
 
   /* ---- Mobile nav: full-width panel below header ---- */
   .nav {
@@ -2148,8 +2148,15 @@ body.modal-open { overflow: hidden; }
 
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
-  .hero-btns { flex-direction: column; }
-  .hero-btns .btn { justify-content: center; }
+  .hero-btns { flex-direction: column; align-items: center; }
+  .hero-btns .btn {
+    justify-content: center;
+    width: auto;
+    min-width: 240px;
+    max-width: 320px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
   .social-links { gap: 10px; }
   .footer-bottom-inner { flex-direction: column; text-align: center; }
 }
