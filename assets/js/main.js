@@ -15,20 +15,29 @@ window.addEventListener('load', () => {
 
 /* ---- Header scroll behavior ---- */
 const header = document.getElementById('header');
+
+const setHeaderHeightVar = () => {
+  document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+};
+
 const handleHeaderScroll = () => {
   if (window.scrollY > 50) {
     header.classList.add('scrolled');
   } else {
     header.classList.remove('scrolled');
   }
+  setHeaderHeightVar();
 };
 window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+window.addEventListener('resize', setHeaderHeightVar);
+setHeaderHeightVar();
 
 /* ---- Mobile nav toggle ---- */
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('nav');
 
 hamburger.addEventListener('click', () => {
+  setHeaderHeightVar();
   const isOpen = hamburger.classList.toggle('open');
   nav.classList.toggle('open', isOpen);
   hamburger.setAttribute('aria-expanded', isOpen);

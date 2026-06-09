@@ -64,6 +64,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -72,6 +73,7 @@ body {
   background: var(--white);
   line-height: 1.65;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -135,12 +137,12 @@ input, textarea, select { font-family: inherit; }
   transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
 }
 .header.scrolled {
-  background: rgba(255,255,255,.97);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: #FFFFFF;
   box-shadow: var(--shadow);
   padding: 10px 0;
 }
+/* NOTE: backdrop-filter intentionally omitted — it creates a CSS containing
+   block that breaks position:fixed on child elements (the mobile nav panel). */
 
 .header-inner {
   display: flex;
@@ -158,6 +160,8 @@ input, textarea, select { font-family: inherit; }
   align-items: center;
   gap: 4px;
 }
+/* Hide mobile-only nav CTA on desktop */
+.nav-mobile-cta-item { display: none; }
 .nav-link {
   font-size: .925rem;
   font-weight: 500;
@@ -2024,56 +2028,100 @@ body.modal-open { overflow: hidden; }
 @media (max-width: 768px) {
   .section { padding: 72px 0; }
 
+  /* ---- Mobile header layout ---- */
+  .header { padding: 10px 0; }
+  .header .container { padding: 0 16px; }
+  .header-inner {
+    gap: 0;
+    justify-content: space-between;
+  }
+  .logo { height: 40px; }
+
+  /* Hide desktop CTA in header — shown inside the mobile menu instead */
+  .header-actions .nav-cta { display: none; }
+
+  /* Hamburger: explicit 44×44 touch target, always rightmost */
+  .hamburger {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-left: auto;
+    position: relative;
+    z-index: 10001;
+  }
+  .hamburger span { background: var(--dark); }
+  .header.scrolled .hamburger span { background: var(--dark); }
+  .hamburger.open span { background: var(--dark); }
+
+  /* ---- Mobile nav: full-width panel below header ---- */
   .nav {
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,.25);
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    top: var(--header-h, 72px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #FFFFFF;
+    padding: 16px 20px 28px;
+    box-shadow: 0 16px 40px rgba(0,0,0,.18);
+    border-top: 2px solid var(--primary);
+    max-height: calc(100svh - var(--header-h, 72px));
+    overflow-y: auto;
     opacity: 0;
     visibility: hidden;
-    transition: opacity var(--transition), visibility var(--transition);
-    z-index: 1050;
+    pointer-events: none;
+    transition: opacity .25s ease, visibility .25s ease;
+    z-index: 9999;
   }
-  .nav.open { opacity: 1; visibility: visible; }
+  .nav.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
   .nav-list {
     flex-direction: column;
-    gap: 6px;
-    text-align: center;
-    width: calc(100% - 32px);
-    max-width: 420px;
-    margin-top: 84px;
-    background: #FFFFFF;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.12);
-    padding: 16px;
-    transform: translateY(-16px);
-    opacity: 0;
-    transition: transform var(--transition), opacity var(--transition);
+    gap: 2px;
+    text-align: left;
+    background: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+    transform: none;
+    opacity: 1;
+    width: 100%;
+    max-width: 100%;
   }
-  .nav.open .nav-list { transform: translateY(0); opacity: 1; }
   .nav-link {
     display: block;
     color: #1F2937;
-    font-size: 1.05rem;
-    font-weight: 500;
-    padding: 14px 20px;
-    border-radius: 12px;
-    border: 1px solid transparent;
-    border-bottom: 1px solid #E5E7EB;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 13px 16px;
+    border-radius: 10px;
+    border-bottom: 1px solid #F3F4F6;
   }
-  .nav-list li:last-child .nav-link { border-bottom: none; }
+  .nav-list li:last-child .nav-link,
+  .nav-list li.nav-mobile-cta-item .nav-link { border-bottom: none; }
   .nav-link:hover, .nav-link.active {
-    background: rgba(0,184,196,.08);
-    color: #00B8C4;
-    border-color: #E5E7EB;
+    background: rgba(0,0,0,.04);
+    color: var(--primary);
   }
-  .hamburger { display: flex; position: relative; z-index: 1100; }
-  .header.scrolled .hamburger span { background: var(--dark); }
-  .hamburger span { background: var(--dark); }
-  .header.scrolled .hamburger.open span { background: var(--white); }
-  .hamburger.open span { background: var(--dark); }
+
+  /* Mobile-only CTA inside the nav */
+  .nav-mobile-cta-item { display: list-item; margin-top: 12px; }
+  .nav-mobile-cta {
+    display: flex !important;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 12px;
+  }
 
   .services-grid { grid-template-columns: 1fr; }
   .benefits-grid { grid-template-columns: 1fr; }
