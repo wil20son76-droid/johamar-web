@@ -2053,13 +2053,16 @@ body.modal-open { overflow: hidden; }
     position: relative;
     z-index: 10001;
   }
-  /* Default: white lines — header is transparent over dark hero at page top */
-  .hamburger span { background: #FFFFFF; }
-  /* Scrolled: dark lines — header background is now white */
-  .header.scrolled .hamburger span { background: #1F2937; }
-  /* Open: dark lines — nav panel has white background beneath hamburger */
-  .hamburger.open span { background: #1F2937; }
-  .header.scrolled .hamburger.open span { background: #1F2937; }
+  /* Always dark — all states */
+  .hamburger span,
+  .header.scrolled .hamburger span,
+  .hamburger.open span,
+  .header.scrolled .hamburger.open span {
+    background: #1F2937 !important;
+    height: 3px;
+    width: 28px;
+    border-radius: 999px;
+  }
 
   /* ---- Mobile nav: full-width panel below header ---- */
   .nav {
