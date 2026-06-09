@@ -38,6 +38,7 @@ const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('nav');
 
 hamburger.addEventListener('click', () => {
+  setHeaderHeightVar(); // ensure --header-h is current before positioning the panel
   const isOpen = hamburger.classList.toggle('open');
   nav.classList.toggle('open', isOpen);
   hamburger.setAttribute('aria-expanded', isOpen);
